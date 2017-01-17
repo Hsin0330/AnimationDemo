@@ -5,9 +5,6 @@ package com.symhung.animationdemo;
  */
 
 public class DrawableAnimationFragment extends AnimFragment {
-//
-//    onCrea
-
     @Override
     public void startAnim() {
 
