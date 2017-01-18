@@ -55,7 +55,7 @@ public class ViewAnimationFragment extends AnimFragment {
 
     @Override
     public void startAnim() {
-        Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.slide_in_right);
+        Animation anim = AnimationUtils.loadAnimation(getContext(), R.anim.slide_left_to_right);
         mView.startAnimation(anim);
     }
 }
