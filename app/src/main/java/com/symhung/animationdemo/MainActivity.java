@@ -29,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
     private static final Demo[] DEMOS = {
             new Demo("View Animation", ViewAnimationFragment.class),
-            new Demo("Drawable Animation", DrawableAnimationFragment.class)
+            new Demo("Drawable Animation", DrawableAnimationFragment.class),
+            new Demo("Property Animation", PropertyAnimationFragment.class)
     };
 
     @Override

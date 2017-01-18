@@ -39,13 +39,6 @@ public class ViewAnimationFragment extends AnimFragment {
         return mView;
     }
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-
-    }
-
     private void drawAnimation(Canvas canvas) {
         int x = canvas.getWidth() / 2;
         int y = canvas.getHeight() / 2;
