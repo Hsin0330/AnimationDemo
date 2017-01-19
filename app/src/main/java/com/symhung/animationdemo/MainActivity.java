@@ -1,5 +1,6 @@
 package com.symhung.animationdemo;
 
+import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -8,7 +9,10 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.transition.Transition;
+import android.transition.TransitionInflater;
 import android.view.View;
+import android.view.Window;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,12 +34,22 @@ public class MainActivity extends AppCompatActivity {
     private static final Demo[] DEMOS = {
             new Demo("View Animation", ViewAnimationFragment.class),
             new Demo("Drawable Animation", DrawableAnimationFragment.class),
-            new Demo("Property Animation", PropertyAnimationFragment.class)
+            new Demo("Property Animation", PropertyAnimationFragment.class),
+            new Demo("Transition Animation", TransitionAnimationFragment.class)
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Transition transition = TransitionInflater.from(this).inflateTransition(R.transition.slide_right);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                getWindow().setExitTransition(transition);
+            }
+        }
+
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
