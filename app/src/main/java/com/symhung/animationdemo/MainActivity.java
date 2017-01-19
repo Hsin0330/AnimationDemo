@@ -35,7 +35,8 @@ public class MainActivity extends AppCompatActivity {
             new Demo("View Animation", ViewAnimationFragment.class),
             new Demo("Drawable Animation", DrawableAnimationFragment.class),
             new Demo("Property Animation", PropertyAnimationFragment.class),
-            new Demo("Transition Animation", TransitionAnimationFragment.class)
+            new Demo("Transition Animation", TransitionAnimationFragment.class),
+            new Demo("Gesture Demo", GestureDemoFragment.class)
     };
 
     @Override
